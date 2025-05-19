@@ -5,6 +5,7 @@ dotenv.config();
 import "./database";
 
 import express from "express";
+import cors from "cors";
 
 // Routes
 import homeRoute from "./routes/homeRoute";
@@ -15,6 +16,18 @@ import photoRoute from "./routes/photoRoutes";
 
 import { resolve } from "path";
 
+const whiteList = ["http://35.198.38.2", "http://localhost:3000"];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whiteList.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
 class App {
   constructor() {
     this.app = express();
@@ -23,6 +36,7 @@ class App {
   }
 
   middlewares() {
+    this.app.use(cors(corsOptions));
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use(

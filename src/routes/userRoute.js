@@ -3,7 +3,7 @@ const router = new Router();
 import userController from "../controllers/UserController";
 import loginRequired from "../middlewares/loginRequired";
 
-router.get("/", userController.index);
+// router.get("/", userController.index);
 // router.get("/:id", userController.show);
 
 router.post("/", userController.create);
