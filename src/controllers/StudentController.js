@@ -34,7 +34,7 @@ class StudentController {
   async create(req, res) {
     try {
       const student = await Student.create(req.body);
-      res.json(`Student ${student.name} created.`);
+      res.json(`Aluno(a) ${student.name} adicionado.`);
     } catch (error) {
       return res.status(400).json({
         errors: error.errors.map((error) => error.message),
@@ -48,7 +48,7 @@ class StudentController {
 
       if (!id) {
         return res.status(400).json({
-          errors: ["Missing ID."],
+          errors: ["ID não informado."],
         });
       }
 
@@ -70,7 +70,7 @@ class StudentController {
 
       if (!student) {
         return res.status(400).json({
-          errors: ["Student is not registered in the system."],
+          errors: ["O aluno não está registrado no sistema."],
         });
       }
 
@@ -88,7 +88,7 @@ class StudentController {
 
       if (!id) {
         return res.status(400).json({
-          errors: ["Missing ID."],
+          errors: ["ID não informado."],
         });
       }
 
@@ -96,14 +96,14 @@ class StudentController {
 
       if (!student) {
         return res.status(400).json({
-          errors: ["Student is not registered in the system."],
+          errors: ["O aluno não está registrado no sistema."],
         });
       }
       if (!req.body) {
-        return res.json(`No changes made to student ${student.name}.`);
+        return res.json(`Sem alterações em ${student.name}.`);
       }
       await student.update(req.body);
-      return res.json(`Student ${student.name} updated.`);
+      return res.json(`Aluno ${student.name} atualizado.`);
     } catch (error) {
       return res.status(400).json({
         errors: error.errors.map((error) => error.message),
@@ -117,7 +117,7 @@ class StudentController {
 
       if (!id) {
         return res.status(400).json({
-          errors: ["Missing ID."],
+          errors: ["ID não informado."],
         });
       }
 
@@ -125,12 +125,12 @@ class StudentController {
 
       if (!student) {
         return res.status(400).json({
-          errors: ["Student is not registered in the system."],
+          errors: ["O aluno não está registrado no sistema."],
         });
       }
 
       await student.destroy();
-      return res.json(`Student ${student.name} deleted.`);
+      return res.json(`Aluno(a) ${student.name} excluído.`);
     } catch (error) {
       return res.status(400).json({
         errors: error.errors.map((error) => error.message),

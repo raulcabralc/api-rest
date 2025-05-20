@@ -11,7 +11,7 @@ var _sequelize = require('sequelize'); var _sequelize2 = _interopRequireDefault(
           validate: {
             len: {
               args: [4, 50],
-              msg: "Name must have between 4 and 50 characters",
+              msg: "Nome deve conter entre 4 a 50 caracteres",
             },
           },
         },
@@ -19,11 +19,11 @@ var _sequelize = require('sequelize'); var _sequelize2 = _interopRequireDefault(
           type: _sequelize2.default.STRING,
           defaultValue: "",
           unique: {
-            msg: "Email already exists.",
+            msg: "Email já está registrado.",
           },
           validate: {
             isEmail: {
-              msg: "Invalid Email",
+              msg: "Email inválido.",
             },
           },
         },
@@ -37,7 +37,7 @@ var _sequelize = require('sequelize'); var _sequelize2 = _interopRequireDefault(
           validate: {
             len: {
               args: [6, 50],
-              msg: "Password must have between 6 and 50 characters",
+              msg: "Senha deve conter entre 6 a 50 caracteres.",
             },
           },
         },

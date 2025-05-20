@@ -10,7 +10,7 @@
           validate: {
             len: {
               args: [3, 30],
-              msg: "Name must have between 3 and 30 characters.",
+              msg: "Nome deve conter entre 3 a 30 caracteres.",
             },
           },
         },
@@ -20,7 +20,7 @@
           validate: {
             len: {
               args: [3, 30],
-              msg: "Surname must have between 4 and 30 characters.",
+              msg: "Sobrenome deve conter entre 3 a 30 caracteres.",
             },
           },
         },
@@ -28,11 +28,11 @@
           type: _sequelize2.default.STRING,
           defaultValue: "",
           unique: {
-            msg: "Email is already registered.",
+            msg: "O email já está cadastrado.",
           },
           validate: {
             isEmail: {
-              msg: "Please, enter a valid email.",
+              msg: "Email inválido.",
             },
           },
         },
@@ -41,7 +41,7 @@
           defaultValue: "",
           validate: {
             isInt: {
-              msg: "Age must be a number.",
+              msg: "Idade deve ser um número inteiro.",
             },
           },
         },
@@ -50,7 +50,7 @@
           defaultValue: "",
           validate: {
             isFloat: {
-              msg: "Weight must be an integer number.",
+              msg: "Peso deve ser um número.",
             },
           },
         },
@@ -59,7 +59,7 @@
           defaultValue: "",
           validate: {
             isFloat: {
-              msg: "Height must be a number.",
+              msg: "Altura deve ser um número.",
             },
           },
         },

@@ -24,7 +24,7 @@ class PhotoController {
         });
 
         return res.json({
-          added: `Photo added to id ${student_id}.`,
+          added: `Foto adicionada ao id ${student_id}.`,
           info: student,
         });
       } catch (e) {
